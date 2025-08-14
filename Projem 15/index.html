@@ -1,0 +1,315 @@
+<html>
+<head>
+    <title>Cv Hazýrlama Aracý</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div class="anaBaslik">
+        <h2>Cv Hazýrlama Aracý</h2>
+    </div>
+    <div class="sayfa">
+        <!--Metin Ýçerikleri-->
+        <div class="metinIcerikleri">
+            <h2 style="text-align:center">Metin Ýçerikleri</h2>
+           <hr />
+           <table>
+               <!--Ýsim Kutusu-->
+               <tr>
+                   <td class="duzenlemeBasliklari"><br /><b>Ýsim Kutusu</b><br /><br /></td>
+               </tr>
+               <tr>
+                   <td><label for="adSecim">Ad Soyad: </label> </td>
+                   <td><input type="text" id="adSecim" onkeyup="MetinDoldur('adSecim', 'isimKutusuIsim')" /></td>
+               </tr>
+               <tr>
+                   <td><label for="unvanSecim">Ünvan: </label> </td>
+                   <td><input type="text" id="unvanSecim" onkeyup="MetinDoldur('unvanSecim', 'isimKutusuUnvan')" /></td>
+               </tr>
+               <!--Ýletiþim Kutusu-->
+               <tr>
+                   <td class="duzenlemeBasliklari"><br /><b>Ýletiþim Bilgileri</b><br /><br /></td>
+               </tr>
+
+               <tr>
+                   <td><label for="telSecim">Telefon: </label> </td>
+                   <td><input type="text" id="telSecim" onkeyup="MetinDoldur('telSecim', 'tel')" /></td>
+               </tr>
+               <tr>
+                   <td><label for="mailSecim">Mail: </label> </td>
+                   <td> <input type="text" id="mailSecim" onkeyup="MetinDoldur('mailSecim', 'mail')" /> </td>
+               </tr>
+               <tr>
+                   <td><label for="webSecim">Web: </label> </td>
+                   <td><input type="text" id="webSecim" onkeyup="MetinDoldur('webSecim', 'web')" /></td>
+               </tr>
+               <tr>
+                   <td><label for="adresSecim">Adres: </label> </td>
+                   <td><textarea id="adresSecim" cols="22" rows="5" onkeyup="MetinDoldur('adresSecim', 'adres')"></textarea></td>
+               </tr>
+               <!--Eðitim Bilgileri-->
+
+               <tr>
+                   <td class="duzenlemeBasliklari"><br /><b>Eðitim Bilgileri</b><br /><br /></td>
+               </tr>
+               <tr>
+                   <td><label for="egitimAciklama">Açýklama: </label> </td>
+                   <td><textarea id="egitimAciklama" cols="22" rows="5" onkeyup="MetinDoldur('egitimAciklama', 'cvEgitimAciklama')"></textarea></td>
+               </tr>
+               <tr>
+                   <td><label for="okulSayisi">Okul Sayýsý: </label> </td>
+                   <td>
+                       <select id="okulSayisi" onchange="OkulSayisiSec()">
+                           <option value="seciniz">Seçiniz</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                       </select>
+                   </td>
+               </tr>
+               <tr id="okulSayisi1" hidden>
+                   <td><label for="okul1">1. Okul: </label> </td>
+                   <td><input type="text" id="okul1" onkeyup="MetinDoldur('okul1', 'cvOkul1')" /></td>
+                   <td><input type="text" id="okulAciklama1" onkeyup="MetinDoldur('okulAciklama1', 'cvOkulAciklama1')" placeholder="Açýklama" /></td>
+               </tr>
+               <tr id="okulSayisi2" hidden>
+                   <td><label for="okul2">2. Okul: </label> </td>
+                   <td><input type="text" id="okul2" onkeyup="MetinDoldur('okul2', 'cvOkul2')" /></td>
+                   <td><input type="text" id="okulAciklama2" onkeyup="MetinDoldur('okulAciklama2', 'cvOkulAciklama2')" placeholder="Açýklama" /></td>
+               </tr>
+               <tr id="okulSayisi3" hidden>
+                   <td><label for="okul3">3. Okul: </label> </td>
+                   <td><input type="text" id="okul3" onkeyup="MetinDoldur('okul3', 'cvOkul3')" /></td>
+                   <td><input type="text" id="okulAciklama3" onkeyup="MetinDoldur('okulAciklama3', 'cvOkulAciklama3')" placeholder="Açýklama" /></td>
+               </tr>
+
+               <!--Yetenekler-->
+
+               <tr>
+                   <td class="duzenlemeBasliklari"><br /><b>Yetenekler</b><br /><br /></td>
+               </tr>
+               <tr>
+                   <td><label for="yetenekAciklama">Açýklama: </label> </td>
+                   <td><textarea id="yetenekAciklama" cols="22" rows="5" onkeyup="MetinDoldur('yetenekAciklama', 'cvYetenekAciklama')"></textarea></td>
+               </tr>
+               <tr>
+                   <td><label for="yetenekSayisi">Yetenek Sayýsý: </label> </td>
+                   <td>
+                       <select id="yetenekSayisi" onchange="YetenekSayisiSec()">
+                           <option value="seciniz">Seçiniz</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                       </select>
+                   </td>
+               </tr>
+               <tr id="yetenekSayisi1" hidden>
+                   <td><label for="yetenek1">1. Yetenek: </label> </td>
+                   <td><input type="text" id="yetenek1" onkeyup="MetinDoldur('yetenek1', 'cvYetenek1')" /></td>
+                   <td><input type="text" id="yetenekAciklama1" onkeyup="MetinDoldur('yetenekAciklama1', 'cvYetenekAciklama1')" placeholder="Açýklama" /></td>
+               </tr>
+               <tr id="yetenekSayisi2" hidden>
+                   <td><label for="yetenek2">2. Yetenek: </label> </td>
+                   <td><input type="text" id="yetenek2" onkeyup="MetinDoldur('yetenek2', 'cvYetenek2')" /></td>
+                   <td><input type="text" id="yetenekAciklama2" onkeyup="MetinDoldur('yetenekAciklama2', 'cvYetenekAciklama2')" placeholder="Açýklama" /></td>
+               </tr>
+               <tr id="yetenekSayisi3" hidden>
+                   <td><label for="yetenek3">3. Yetenek: </label> </td>
+                   <td><input type="text" id="yetenek3" onkeyup="MetinDoldur('yetenek3', 'cvYetenek3')" /></td>
+                   <td><input type="text" id="yetenekAciklama3" onkeyup="MetinDoldur('yetenekAciklama3', 'cvYetenekAciklama3')" placeholder="Açýklama" /></td>
+               </tr>
+               <!--Hakkýmda-->
+               <tr>
+                   <td class="duzenlemeBasliklari"><br /><b>Hakkýmda</b><br /><br /></td>
+               </tr>
+               <tr>
+                   <td><label for="hakkimdaAciklama">Açýklama : </label></td>
+                   <td><textarea id="hakkimdaAciklama" cols="22" rows="5" onkeyup="MetinDoldur('hakkimdaAciklama', 'cvHakkimda')"></textarea></td>
+               </tr>
+               <!--Ýþ Deneyimi-->
+               <tr>
+                   <td class="duzenlemeBasliklari"><br /><b>Ýþ Deneyimi</b><br /><br /></td>
+               </tr>
+               <tr>
+                   <td><label for="deneyimAciklama">Açýklama : </label></td>
+                   <td><textarea id="deneyimAciklama" cols="22" rows="5" onkeyup="MetinDoldur('deneyimAciklama', 'cvDeneyim')"></textarea></td>
+               </tr>
+
+           </table>
+        </div>
+        <!--Görünüþ-->
+        <div class="gorunus">
+            <h2 style="text-align:center">Görünüþ</h2>
+            <hr />
+            <table>
+                <!--Renkler-->
+                <tr>
+                    <td class="duzenlemeBasliklari"><br /><b>Renkler</b><br /></td>
+                </tr>
+                <tr>
+                    <td><label for="arkaplanRenk">Arkaplan Rengi: </label></td>
+                    <td><input type="color" id="arkaplanRenk" value="#dd2e2e" onchange="RenkDegistir('arkaplanRenk', 'cv')" /></td>
+                </tr>
+                <tr>
+                    <td><label for="solKolonRenk">Sol Kolon Rengi: </label></td>
+                    <td><input type="color" id="solKolonRenk" value="#ad1a1a" onchange="RenkDegistir('solKolonRenk', 'solKolon')" /></td>
+                </tr>
+                <tr>
+                    <td><label for="isimKutusuRenk">Ýsim Kutusu Rengi: </label></td>
+                    <td><input type="color" id="isimKutusuRenk" value="#383838" onchange="RenkDegistir('isimKutusuRenk', 'isimKutusu')" /></td>
+                </tr>
+                <tr>
+                    <td><label for="isimKutusuYaziRenk">Ýsim Kutusu Yazý Rengi: </label></td>
+                    <td><input type="color" id="isimKutusuYaziRenk" value="#ffffff" onchange="YaziRengiDegistir()" /></td>
+                </tr>
+                <!--Yazý Tipi-->
+                <tr>
+                    <td class="duzenlemeBasliklari"><br /><b>Yazý Tipi</b><br /></td>
+                </tr>
+                <tr>
+                    <td><label for="yaziTipi">Yazý Tipi: </label></td>
+                    <td>
+                        <select id="yaziTipi" onchange="FontDegistir()">
+                            <option value="seciminiz">Seçiminiz</option>
+                            <option value="1">Times New Roman</option>
+                            <option value="2">Courier New</option>
+                            <option value="3">Lucida Handwriting</option>
+                        </select>
+                    </td>
+                </tr>
+                <!--Fotoðraf-->
+                <tr>
+                    <td class="duzenlemeBasliklari"><br /><b>Fotoðraf</b><br /><br /></td>
+                </tr>
+                <tr>
+                    <td><label for="fotoSekil">Fotoðraf Çerçevesi Þekli :</label></td> <!--Çerçeve seçimi-->
+                    <td>
+                        <select id="fotoSekil" onchange="CerceveDegistir()">
+                            <option value="">Seçiminiz</option>
+                            <option value="1">Köþeli</option>
+                            <option value="2">Oval</option>
+                            <option value="3">Yuvarlak</option>
+                        </select>
+                    </td>
+                </tr>
+                <!--Baþlýk Altý Çizgileri-->
+                <tr>
+                    <td class="duzenlemeBasliklari"><br /><b>Baþlýk Altý Çizgileri</b><br /><br /></td>
+                </tr>
+                <tr>
+                    <td><label for="cizgiRenk">Çizgi Rengi : </label></td> <!--Çizgi rengi deðiþtirme-->
+                    <td><input type="color" id="cizgiRenk" onchange="CizgiRengiDegistir()"></td>
+                </tr>
+                <tr>
+                    <td><label for="cizgiSekil">Çizgi Þekli :  </label></td> <!--Çizgi þekli seçimi-->
+                    <td>
+                        <select id="cizgiSekil" onchange="CizgiSekliDegistir()">
+                            <option value="">Seçiminiz</option>
+                            <option value="dotted">Noktalý</option>
+                            <option value="dashed">Çizgili</option>
+                            <option value="solid">Düz</option>
+                        </select>
+                    </td>
+                </tr>
+
+            </table>
+
+
+        </div>
+        <!--Cv Bölümü-->
+        <div class="cv" id="cv">
+            <!--Cv sol kolon-->
+            <div class="solKolon" id="solKolon">
+                <!--Fotoðraf-->
+                <div class="foto" id="fotograf">
+                    <div class="fotoYazi">FOTOÐRAF</div>
+                </div>
+                <!--Ýletiþim-->
+                <div class="kutu">
+                    <div class="baslik" id="iletisimBaslik">ÝLETÝÞÝM</div>
+                    <div>
+                        <ul>
+                            <li id="tel">{ Telefon }</li> <!--Telefon bilgilerinin görüneceði bölüm-->
+                            <li id="mail">{ Mail }</li> <!--Mail bilgilerinin görüneceði bölüm-->
+                            <li id="adres">{ Adres }</li> <!--Adres bilgilerinin görüneceði bölüm-->
+                            <li id="web">{ Web }</li> <!--Web bilgilerinin görüneceði bölüm-->
+                        </ul>
+                    </div>
+                </div>
+                <!--Eðitim-->
+                <div class="kutu">
+                    <div class="baslik" id="egitimBaslik"> EÐÝTÝM</div>
+                    <div>
+                        <p id="cvEgitimAciklama">{ AÇIKLAMA }</p>
+                        <ul>
+                            <li id="cvOkulLi1" hidden>
+                                <span id="cvOkul1"></span> <!--Okulun adýnýn görüneceði bölüm-->
+                                <ul>
+                                    <li id="cvOkulAciklama1"></li> <!--Okulun açýklamasýnýn görüneceði bölüm-->
+                                </ul>
+                            </li>
+                            <li id="cvOkulLi2" hidden>
+                                <span id="cvOkul2"></span>
+                                <ul>
+                                    <li id="cvOkulAciklama2"></li>
+                                </ul>
+                            </li>
+                            <li id="cvOkulLi3" hidden>
+                                <span id="cvOkul3"></span>
+                                <ul>
+                                    <li id="cvOkulAciklama3"></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--Yetenekler-->
+                <div class="kutu">
+                    <div class="baslik" id="yetenekBaslik"> YETENEK</div>
+                    <div>
+                        <p id="cvYetenekAciklama">{ AÇIKLAMA }</p>
+                        <ul>
+                            <li id="cvYetenekLi1" hidden>
+                                <span id="cvYetenek1"></span> <!--Okulun adýnýn görüneceði bölüm-->
+                                <ul>
+                                    <li id="cvYetenekAciklama1"></li> <!--Okulun açýklamasýnýn görüneceði bölüm-->
+                                </ul>
+                            </li>
+                            <li id="cvYetenekLi2" hidden>
+                                <span id="cvYetenek2"></span>
+                                <ul>
+                                    <li id="cvYetenekAciklama2"></li>
+                                </ul>
+                            </li>
+                            <li id="cvYetenekLi3" hidden>
+                                <span id="cvYetenek3"></span>
+                                <ul>
+                                    <li id="cvYetenekAciklama3"></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--Cv sag kolon-->
+            <div class="sagKolon">
+                <div class="isimKutusu" id="isimKutusu">
+                    <div class="isim" id="isimKutusuIsim">{ AD SOYAD }</div> <!--Ýsmin görüneceði bölüm-->
+                    <div class="cizgi" id="cizgi"></div>
+                    <div class="unvan" id="isimKutusuUnvan">{ UNVAN }</div> <!--Ünvanýn görüneceði bölüm-->
+                </div>
+                <div class="kutu">
+                    <div class="baslik" id="hakkimdaBaslik">HAKKIMDA</div>
+                    <div>
+                        <p id="cvHakkimda">{ AÇIKLAMA }</p> <!--Hakkýmdanýn görüneceði bölüm-->
+                    </div>
+                </div>
+                <div class="kutu">
+                    <div class="baslik" id="deneyimBaslik">ÝÞ DENEYÝMÝ</div>
+                    <p id="cvDeneyim">{ AÇIKLAMA }</p> <!--Ýþ deneyimlerinin görüneceði bölüm-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
